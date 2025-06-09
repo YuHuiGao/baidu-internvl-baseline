@@ -1,2 +1,0 @@
-# baidu-internvl-baseline
-baseline
