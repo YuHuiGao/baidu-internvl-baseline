@@ -23,9 +23,17 @@ import sys
 from pathlib import Path
 cur_path = Path(__file__).parent.absolute()
 
+#第一种获取方式
 IMAGE_INPUT_DIR = Path(sys.argv[1])
 Query_PATH = Path(sys.argv[2])
 OUPUT_PATH = Path(sys.argv[3])
+
+#第二种获取方式
+IMAGE_INPUT_DIR = os.environ["IMAGE_INPUT_DIR"]
+Query_PATH = os.environ["QUERY_PATH"]
+OUPUT_PATH = os.environ["OUPUT_PATH"]
+
+
 
 def inference():
     print("------------------------------开始推理-----------------------------")
@@ -58,7 +66,7 @@ if __name__ == "__main__":
 #运行推理脚本
 ${conda_path}/envs/pytorch-env/bin/python run.py \
   $IMAGE_INPUT_DIR \
-  $Query_PATH \
+  $QUERY_PATH \
   $OUPUT_PATH \
 ```
 
