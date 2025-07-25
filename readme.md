@@ -6,8 +6,19 @@
 
 ## 环境搭建
 
+初版环境与更新后的环境不同，目前评测环境已更新！
 - 创建requirements.txt文件，包含InternVL模型必须的包
 
+新版环境（当前环境）
+```
+Python 3.10
+CUDA 12.6
+torch                   2.6.0
+torchaudio              0.21.0
+torchvision             2.6.0
+```
+
+旧版环境
 ```
 Python 3.10
 CUDA 11.6
@@ -139,7 +150,10 @@ if __name__ == "__main__":
 ```
 
 - 编写run.sh文件
+pytorch提交界面的run.sh脚本内容与paddlepaddle赛道run.sh脚本内容不同，请选手注意！！！
+使用错误的环境将导致分数无效！！！
 
+pytorch环境run.sh脚本
 ```
 #运行推理脚本
 ${conda_path}/envs/pytorch-env/bin/python run.py \
@@ -147,4 +161,17 @@ ${conda_path}/envs/pytorch-env/bin/python run.py \
   $QUERY_PATH \
   $OUPUT_PATH \
 ```
+
+paddlepaddle环境run.sh脚本
+paddlepaddle赛道禁用pytorch，违规将导致分数无效！！！
+```
+#运行推理脚本
+${conda_path}/envs/paddlepaddle-env/bin/python run.py \
+  $IMAGE_INPUT_DIR \
+  $QUERY_PATH \
+  $OUPUT_PATH \
+```
+
+
+
 
