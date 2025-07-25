@@ -150,6 +150,7 @@ if __name__ == "__main__":
 ```
 
 - 编写run.sh文件
+
 pytorch提交界面的run.sh脚本内容与paddlepaddle赛道run.sh脚本内容不同，请选手注意！！！
 使用错误的环境将导致分数无效！！！
 
@@ -170,6 +171,20 @@ ${conda_path}/envs/paddlepaddle-env/bin/python run.py \
   $IMAGE_INPUT_DIR \
   $QUERY_PATH \
   $OUPUT_PATH \
+```
+
+- 编写build_env.sh文件
+```
+# 如果选手运行其他终端指令，可以通过编写build_env.sh运行
+# 下面仅以运行python和pip为示例
+# pytorch环境指令
+${conda_path}/envs/pytorch-env/bin/python ...
+${conda_path}/envs/pytorch-env/bin/pip install ...
+
+# paddlepaddle环境指令
+${conda_path}/envs/paddlepaddle-env/bin/python ...
+${conda_path}/envs/paddlepaddle-env/bin/pip install ...
+
 ```
 
 
